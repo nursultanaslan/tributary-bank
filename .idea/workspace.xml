@@ -4,20 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7ac1a2c-a187-4f58-97f3-c0a60f92e71f" name="Changes" comment="add discovery-server and configurations">
-      <change afterPath="$PROJECT_DIR$/configurations/customer-service/customer-service-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configurations/customer-service/customer-service.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configurations/discovery-server/discovery-server-dev.yml" afterDir="false" />
+    <list default="true" id="d7ac1a2c-a187-4f58-97f3-c0a60f92e71f" name="Changes" comment="configurations added">
+      <change afterPath="$PROJECT_DIR$/configurations/gateway-server/gateway-server-dev.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configurations/gateway-server/gateway-server.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customer-service/src/main/java/com/turkcell/customerservice/controller/CustomersController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config-server/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configurations/discovery-server/discovery-server.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configurations/discovery-server/discovery-server.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/customer-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/discovery-server/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -110,6 +117,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="GatewayServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="gateway-server" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.gatewayserver.GatewayServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -136,7 +151,7 @@
       <workItem from="1765215624743" duration="4000" />
       <workItem from="1765311393651" duration="1950000" />
       <workItem from="1765351833347" duration="364000" />
-      <workItem from="1765530505206" duration="1889000" />
+      <workItem from="1765530505206" duration="2897000" />
     </task>
     <task id="LOCAL-00001" summary="add customer-service">
       <option name="closed" value="true" />
@@ -170,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1765313241460</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="configurations added">
+      <option name="closed" value="true" />
+      <created>1765542808347</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1765542808347</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,7 +215,8 @@
     <MESSAGE value="add customer-service .yml file" />
     <MESSAGE value="add config-server" />
     <MESSAGE value="add discovery-server and configurations" />
-    <option name="LAST_COMMIT_MESSAGE" value="add discovery-server and configurations" />
+    <MESSAGE value="configurations added" />
+    <option name="LAST_COMMIT_MESSAGE" value="configurations added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

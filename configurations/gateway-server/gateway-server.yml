@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: customer-service
+              uri: lb://customer-service
+              predicates:
+                - Path=/api/v1/customers/**
+
+server:
+  port: 8888
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true

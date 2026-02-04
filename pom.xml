@@ -17,7 +17,6 @@
         <module>config-server</module>
         <module>discovery-server</module>
         <module>gateway-server</module>
-        <module>bff-service</module>
     </modules>
 
     <properties>

@@ -10,6 +10,7 @@
         <module name="gateway-server" />
         <module name="discovery-server" />
         <module name="customer-service" />
+        <module name="identity-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -23,6 +24,7 @@
       <module name="customer-service" options="" />
       <module name="discovery-server" options="" />
       <module name="gateway-server" options="" />
+      <module name="identity-service" options="" />
     </option>
   </component>
 </project>

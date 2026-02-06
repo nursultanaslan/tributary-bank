@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7ac1a2c-a187-4f58-97f3-c0a60f92e71f" name="Changes" comment="removed bff-service">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="d7ac1a2c-a187-4f58-97f3-c0a60f92e71f" name="Changes" comment="add identity-service">
+      <change afterPath="$PROJECT_DIR$/docs/contracts/customer-service-v1.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docs/contracts/identity-service-v1.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/turkcell/identityservice/domain/model/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/turkcell/identityservice/domain/model/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/turkcell/identityservice/domain/port/KeycloakPort.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +21,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Enum" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -172,7 +175,9 @@
       <workItem from="1765530505206" duration="4123000" />
       <workItem from="1766523814495" duration="824000" />
       <workItem from="1769250472274" duration="4000" />
-      <workItem from="1770203851744" duration="4964000" />
+      <workItem from="1770203851744" duration="6398000" />
+      <workItem from="1770280918323" duration="11607000" />
+      <workItem from="1770367008618" duration="1033000" />
     </task>
     <task id="LOCAL-00001" summary="add customer-service">
       <option name="closed" value="true" />
@@ -246,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770203974201</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add identity-service">
+      <option name="closed" value="true" />
+      <created>1770212503828</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1770212503828</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,7 +286,8 @@
     <MESSAGE value="update spring-cloud version" />
     <MESSAGE value="added bff-service" />
     <MESSAGE value="removed bff-service" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed bff-service" />
+    <MESSAGE value="add identity-service" />
+    <option name="LAST_COMMIT_MESSAGE" value="add identity-service" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -9,6 +9,12 @@ spring:
               predicates:
                 - Path=/api/v1/customers/**
 
+            - id: identity-service
+              uri: lb://identity-service
+              predicates:
+                - Path=/api/v1/identity/**
+
+
 server:
   port: 8888
 

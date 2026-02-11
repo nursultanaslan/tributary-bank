@@ -45,11 +45,10 @@
             <scope>runtime</scope>
             <optional>true</optional>
         </dependency>
-
-        <!-- Spring Boot Starter Actuator Test -->
+        <!-- Spring Boot Starter Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator-test</artifactId>
+            <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

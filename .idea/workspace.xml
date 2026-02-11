@@ -4,21 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d7ac1a2c-a187-4f58-97f3-c0a60f92e71f" name="Changes" comment="created identity-service contract">
-      <change afterPath="$PROJECT_DIR$/configurations/identity-service/identity-service-dev.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/configurations/identity-service/identity-service.yml" afterDir="false" />
+    <list default="true" id="d7ac1a2c-a187-4f58-97f3-c0a60f92e71f" name="Changes" comment="add identity-service configurations">
       <change afterPath="$PROJECT_DIR$/docs/contracts/customer-service-v1.yml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/turkcell/identityservice/domain/model/Role.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/turkcell/identityservice/domain/model/User.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/turkcell/identityservice/domain/port/KeycloakPort.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/turkcell/identityservice/infrastructure/config/KeycloakProperties.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/turkcell/identityservice/infrastructure/keycloak/KeycloakClientAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identity-service/src/main/java/com/turkcell/identityservice/web/controller/IdentityController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configurations/gateway-server/gateway-server.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configurations/gateway-server/gateway-server.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/contracts/identity-service-v1.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/contracts/identity-service-v1.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configurations/identity-service/identity-service-dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/configurations/identity-service/identity-service-dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/customer-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/customer-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/discovery-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/discovery-server/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gateway-server/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/gateway-server/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/identity-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/identity-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/identity-service/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +51,10 @@
   <component name="HttpClientOnboardingState">{
   &quot;isOnboardingCommentShown&quot;: true
 }</component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -63,39 +66,54 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/nursultanaslan/personal-projects/tributary-bank/tributary-bank/pom.xml&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/nursultanaslan/personal-projects/tributary-bank/tributary-bank/src/main/java/com/turkcell/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.20229885&quot;,
-    &quot;run.configurations.included.in.services&quot;: &quot;true&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Maven.tributary-bank [clean,install].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "Spring Boot.ConfigServerApplication.executor": "Run",
+    "Spring Boot.CustomerServiceApplication.executor": "Run",
+    "Spring Boot.DiscoveryServerApplication.executor": "Run",
+    "Spring Boot.GatewayServerApplication.executor": "Run",
+    "Spring Boot.IdentityServiceApplication.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "main",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "/Users/nursultanaslan/personal-projects/tributary-bank/tributary-bank/pom.xml",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "/Users/nursultanaslan/personal-projects/tributary-bank/tributary-bank/src/main/java/com/turkcell/Main.java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.20229885",
+    "run.configurations.included.in.services": "true",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;GitIgnore&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "GitIgnore"
     ]
   }
-}</component>
+}]]></component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn clean install" />
+    </option>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -105,16 +123,23 @@
         <option value="SpringBootApplicationConfigurationType" />
       </set>
     </option>
+    <option name="configurationStatuses">
+      <map>
+        <entry key="SpringBootApplicationConfigurationType">
+          <value>
+            <map>
+              <entry key="ConfigServerApplication" value="STOPPED" />
+              <entry key="CustomerServiceApplication" value="STOPPED" />
+              <entry key="DiscoveryServerApplication" value="STOPPED" />
+              <entry key="GatewayServerApplication" value="STOPPED" />
+              <entry key="IdentityServiceApplication" value="STOPPED" />
+            </map>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.CustomerServiceApplication">
-    <configuration name="BffServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="bff-service" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.bffservice.BffServiceApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ConfigServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="config-server" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.turkcell.configserver.ConfigServerApplication" />
@@ -188,7 +213,8 @@
       <workItem from="1770367008618" duration="7083000" />
       <workItem from="1770549976476" duration="3395000" />
       <workItem from="1770578779424" duration="1469000" />
-      <workItem from="1770634086731" duration="8515000" />
+      <workItem from="1770634086731" duration="10977000" />
+      <workItem from="1770793296480" duration="1284000" />
     </task>
     <task id="LOCAL-00001" summary="add customer-service">
       <option name="closed" value="true" />
@@ -278,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770368082113</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add identity-service configurations">
+      <option name="closed" value="true" />
+      <created>1770647988338</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1770647988338</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +341,8 @@
     <MESSAGE value="removed bff-service" />
     <MESSAGE value="add identity-service" />
     <MESSAGE value="created identity-service contract" />
-    <option name="LAST_COMMIT_MESSAGE" value="created identity-service contract" />
+    <MESSAGE value="add identity-service configurations" />
+    <option name="LAST_COMMIT_MESSAGE" value="add identity-service configurations" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

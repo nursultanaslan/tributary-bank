@@ -6,15 +6,13 @@ eureka:
 spring:
   cloud:
     gateway:
-      server:
-        webflux:
-          routes:
-            - id: customer-service
-              uri: lb://customer-service
-              predicates:
-                - Path=/api/v1/customers/**
+      routes:
+        - id: customer-service
+          uri: lb://customer-service
+          predicates:
+            - Path=/api/v1/customers/**
 
-            - id: identity-service
-              uri: lb://identity-service
-              predicates:
-                - Path=/api/v1/identity/**
+        - id: identity-service
+          uri: lb://identity-service
+          predicates:
+            - Path=/api/v1/identity/**

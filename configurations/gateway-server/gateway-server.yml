@@ -1,6 +1,22 @@
 server:
   port: 8888
 
+spring:
+  cloud:
+    gateway:
+      server:
+        webflux:
+          routes:
+            - id: customer-service
+              uri: lb://customer-service
+              predicates:
+                - Path=/api/v1/customers/**
+
+            - id: identity-service
+              uri: lb://identity-service
+              predicates:
+                - Path=/api/v1/identity/**
+
 eureka:
   client:
     fetch-registry: true

@@ -6,13 +6,23 @@ eureka:
 spring:
   cloud:
     gateway:
-      routes:
-        - id: customer-service
-          uri: lb://customer-service
-          predicates:
-            - Path=/api/v1/customers/**
+      server:
+        webflux:
+          routes:
+            - id: customer-service
+              uri: lb://customer-service
+              predicates:
+                - Path=/api/v1/customers/**
 
-        - id: identity-service
-          uri: lb://identity-service
-          predicates:
-            - Path=/api/v1/identity/**
+            - id: identity-service
+              uri: lb://identity-service
+              predicates:
+                - Path=/api/v1/identity/**
+
+logging:
+  level:
+    org.spring.framework.cloud.gateway: TRACE
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.ipc.netty: DEBUG
+    reactor.netty: DEBUG

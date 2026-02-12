@@ -1,0 +1,6 @@
+#tüm actuator endpointlerini dışarıya açar (actuator dependency)
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

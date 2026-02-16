@@ -30,13 +30,6 @@
             <optional>true</optional>
         </dependency>
 
-        <!-- Keycloak Admin Api for User controlled registration-->
-        <dependency>
-            <groupId>org.keycloak</groupId>
-            <artifactId>keycloak-admin-client</artifactId>
-            <version>26.0.8</version>
-        </dependency>
-
         <!-- Spring Boot Starter Test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -54,6 +47,12 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
+        <!-- Keycloak Admin Api for User controlled registration-->
+        <dependency>
+            <groupId>org.keycloak</groupId>
+            <artifactId>keycloak-admin-client</artifactId>
+            <version>26.0.8</version>
+        </dependency>
     </dependencies>
 
     <build>

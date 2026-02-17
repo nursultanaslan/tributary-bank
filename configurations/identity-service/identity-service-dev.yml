@@ -9,5 +9,5 @@ keycloak:
   auth-server-url: http://localhost:8585
   admin-client-id: identity-service-client
   admin-client-secret: jkL6Xdq3aQU4EHI1kZes6VlNYJzMG9gi
-  token-endpoint: http://localhost:8585/realms/example/protocol/openid-connect/token
+  token-endpoint: http://localhost:8585/realms/tributary-bank/protocol/openid-connect/token
   admin-realm: master

@@ -39,14 +39,14 @@ public class KeycloakClientAdapter implements KeycloakPort {
 
         //Realm'e bağlan (GET /admin/realms/{realm})
         RealmResource realmResource = keycloakAdminClient.realm(keycloakProperties.getRealm());
-        //o Realm içerisindeki kullanıcı endpointine erişir (GET /admin/realms/{realm}/users)
+        //O Realm içerisindeki kullanıcı endpointine erişir (GET /admin/realms/{realm}/users)
         UsersResource usersResource = realmResource.users();
 
         //Create user representation
         UserRepresentation user = getUserRepresentation(email, password);
 
-        //user create edilip Response nesnesine atanır
-        //bu Response nesnesinin Header kısmı Location bilgisi içerir.
+        //User create edilip Response nesnesine atanır.
+        //Bu Response nesnesinin Header kısmı Location bilgisi içerir.
         try (Response response = usersResource.create(user)) {
 
             if (response.getStatus() != 201) {
@@ -61,29 +61,33 @@ public class KeycloakClientAdapter implements KeycloakPort {
             UUID userUUID = UUID.fromString(userId);
 
             //Assign default 'customer' role
-            assignRoleToUser(userUUID);
+            registerUserWithRole(userUUID, Role.valueOf("customer"));
 
             return userUUID;
         }
-
     }
-
-    @Override
-    public User getUserById(UUID userId) {
-        return null;
-    }
-
 
     //Helper Methods
-    private void assignRoleToUser(UUID userId) {
+    private void registerUserWithRole(UUID userId, Role role) {
         try {
-            //realm'e bağlan.
-            RealmResource realmResource = keycloakAdminClient.realm(keycloakProperties.getRealm());
+            //Realm'e bağlan.
+            RealmResource realmResource =
+                    keycloakAdminClient
+                            .realm(keycloakProperties.getRealm());
             //Get Role
-            RoleRepresentation role = realmResource.roles().get(String.valueOf(Role.CUSTOMER)).toRepresentation();
+            RoleRepresentation roleRep =
+                    realmResource
+                            .roles()
+                            .get(role.toKeycloakRole())
+                            .toRepresentation();
 
             //Assign role to user
-            realmResource.users().get(userId.toString()).roles().realmLevel().add(List.of(role));
+            realmResource
+                    .users()
+                    .get(userId.toString())
+                    .roles()
+                    .realmLevel()
+                    .add(List.of(roleRep));
         } catch (Exception e) {
             throw new KeycloakServiceException("Kullanıcıya 'customer' rolü atanamadı: " + userId, e);
         }

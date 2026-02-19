@@ -15,5 +15,5 @@ public interface KeycloakPort {
      * getUserById: Get user information by user ID
      */
     UUID createUser(String email, String password);
-    User getUserById(UUID userId);
+    //User getUserById(UUID userId);
 }

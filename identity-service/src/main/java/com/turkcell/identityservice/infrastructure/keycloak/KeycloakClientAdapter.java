@@ -2,7 +2,6 @@ package com.turkcell.identityservice.infrastructure.keycloak;
 
 import com.turkcell.identityservice.domain.exception.KeycloakServiceException;
 import com.turkcell.identityservice.domain.model.Role;
-import com.turkcell.identityservice.domain.model.User;
 import com.turkcell.identityservice.domain.port.KeycloakPort;
 import com.turkcell.identityservice.infrastructure.config.KeycloakProperties;
 import jakarta.ws.rs.core.Response;
@@ -35,7 +34,7 @@ public class KeycloakClientAdapter implements KeycloakPort {
 
 
     @Override
-    public UUID createUser(String email, String password) {
+    public UUID createUser(String email, String username, String password) {
 
         //Realm'e bağlan (GET /admin/realms/{realm})
         RealmResource realmResource = keycloakAdminClient.realm(keycloakProperties.getRealm());
@@ -43,7 +42,7 @@ public class KeycloakClientAdapter implements KeycloakPort {
         UsersResource usersResource = realmResource.users();
 
         //Create user representation
-        UserRepresentation user = getUserRepresentation(email, password);
+        UserRepresentation user = getUserRepresentation(email, username, password);
 
         //User create edilip Response nesnesine atanır.
         //Bu Response nesnesinin Header kısmı Location bilgisi içerir.
@@ -58,44 +57,46 @@ public class KeycloakClientAdapter implements KeycloakPort {
             //Location'dan kayıt olan kullanıcının uuid bilgisini alırız.
             String locationHeader = response.getHeaderString("Location");
             String userId = locationHeader.substring(locationHeader.lastIndexOf("/") + 1);
-            UUID userUUID = UUID.fromString(userId);
 
-            //Assign default 'customer' role
-            registerUserWithRole(userUUID, Role.valueOf("customer"));
-
-            return userUUID;
+            return UUID.fromString(userId);
         }
     }
 
-    //Helper Methods
-    private void registerUserWithRole(UUID userId, Role role) {
+    @Override
+    public void assignRoleToUser(UUID userId, Role role) {
         try {
             //Realm'e bağlan.
             RealmResource realmResource =
                     keycloakAdminClient
                             .realm(keycloakProperties.getRealm());
-            //Get Role
+            //Rolü al.
             RoleRepresentation roleRep =
                     realmResource
                             .roles()
                             .get(role.toKeycloakRole())
                             .toRepresentation();
-
-            //Assign role to user
+            //Kullanıcıya rolü ata.
             realmResource
                     .users()
                     .get(userId.toString())
                     .roles()
                     .realmLevel()
                     .add(List.of(roleRep));
-        } catch (Exception e) {
-            throw new KeycloakServiceException("Kullanıcıya 'customer' rolü atanamadı: " + userId, e);
+        }catch (KeycloakServiceException e) {
+            throw new KeycloakServiceException("Kullanıcıya " + role + " rolü atanamadı: " + userId);
         }
     }
 
-    private UserRepresentation getUserRepresentation(String email, String password) {
+    @Override
+    public void deleteUser(UUID userId) {
+
+    }
+
+    //Helper methods
+    private UserRepresentation getUserRepresentation(String email, String username, String password) {
         UserRepresentation user = new UserRepresentation();
         user.setEmail(email);
+        user.setUsername(username);
         user.setEnabled(true);
         user.setEmailVerified(true);    //Auto-verify for MVP.
         // TODO: gerçek sistemde email verification flow olmalı bu otomatik true olmamalı

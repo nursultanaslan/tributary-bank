@@ -1,6 +1,6 @@
 package com.turkcell.identityservice.domain.port;
 
-import com.turkcell.identityservice.domain.model.User;
+import com.turkcell.identityservice.domain.model.Role;
 
 import java.util.UUID;
 
@@ -14,6 +14,10 @@ public interface KeycloakPort {
      * createUser: Create new user in Keycloak
      * getUserById: Get user information by user ID
      */
-    UUID createUser(String email, String password);
-    //User getUserById(UUID userId);
+    UUID createUser(String email, String username, String password);
+
+    void assignRoleToUser(UUID userId, Role role);
+
+    void deleteUser(UUID userId);
+
 }

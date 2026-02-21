@@ -23,8 +23,8 @@ public class RegisterUserUseCase {
         try {
             keycloakPort.assignRoleToUser(userId, Role.CUSTOMER);
             return userId;
-        }catch (KeycloakServiceException e){
-            throw new KeycloakServiceException("Could not assign role to user");
+        }catch (Exception e){
+            throw new KeycloakServiceException("Could not assign role to user", e);
         }
     }
 }

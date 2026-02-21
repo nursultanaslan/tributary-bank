@@ -7,6 +7,7 @@ import com.turkcell.identityservice.domain.model.User;
 import com.turkcell.identityservice.domain.port.KeycloakPort;
 import com.turkcell.identityservice.infrastructure.config.KeycloakProperties;
 import jakarta.ws.rs.core.Response;
+import lombok.extern.slf4j.Slf4j;
 import org.keycloak.admin.client.Keycloak;
 import org.keycloak.admin.client.resource.RealmResource;
 import org.keycloak.admin.client.resource.UsersResource;
@@ -25,6 +26,7 @@ import java.util.UUID;
  * Handles all Keycloak Admin API and Token Endpoint interactions.
  */
 @Component
+@Slf4j
 public class KeycloakClientAdapter implements KeycloakPort {
 
 
@@ -39,6 +41,7 @@ public class KeycloakClientAdapter implements KeycloakPort {
 
     @Override
     public UUID createUser(String email, String username, String password) {
+        log.info("Creating user with username {} and email {}", username, email);
 
         //Realm'e bağlan (GET /admin/realms/{realm})
         RealmResource realmResource = keycloakAdminClient.realm(keycloakProperties.getRealm());
@@ -54,6 +57,7 @@ public class KeycloakClientAdapter implements KeycloakPort {
 
             if (response.getStatus() != 201) {
                 String errorBody = response.readEntity(String.class);
+                log.error("Failed to create user: status {}, body {}", response.getStatus(), errorBody);
                 throw new KeycloakServiceException("Keycloak'ta kullanıcı oluşturulamadı: HTTP " + response.getStatus() + " - " + errorBody);
             }
 
@@ -62,6 +66,7 @@ public class KeycloakClientAdapter implements KeycloakPort {
             String locationHeader = response.getHeaderString("Location");
             String userId = locationHeader.substring(locationHeader.lastIndexOf("/") + 1);
 
+            log.info("User created successfully in Keycloak: userId {}, email {}", userId, email);
             return UUID.fromString(userId);
         }
     }

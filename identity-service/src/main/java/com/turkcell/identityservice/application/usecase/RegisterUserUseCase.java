@@ -3,11 +3,13 @@ package com.turkcell.identityservice.application.usecase;
 import com.turkcell.identityservice.domain.exception.KeycloakServiceException;
 import com.turkcell.identityservice.domain.model.Role;
 import com.turkcell.identityservice.domain.port.KeycloakPort;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
 
 @Service
+@Slf4j
 public class RegisterUserUseCase {
 
     private final KeycloakPort keycloakPort;
@@ -17,14 +19,16 @@ public class RegisterUserUseCase {
     }
 
     public UUID execute(String email, String username, String password){
-        //email ve şifresi alınan yeni kullanıcı kaydı oluşturulur.
+        log.info("Registering user with email {} and username {}", email, username);
         UUID userId = keycloakPort.createUser(email, username, password);
 
         try {
             keycloakPort.assignRoleToUser(userId, Role.CUSTOMER);
+            log.info("Role successfully assigned to user: {}", userId);
             return userId;
         }catch (Exception e){
-            throw new KeycloakServiceException("Could not assign role to user", e);
+            log.warn("Exception passed to the assignRoleToUser method.");
+            throw new KeycloakServiceException("Could not assign role to user");
         }
     }
 }

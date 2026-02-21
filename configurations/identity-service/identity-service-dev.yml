@@ -9,3 +9,10 @@ keycloak:
   auth-server-url: http://localhost:8585
   admin-client-id: identity-service-client
   admin-client-secret: A0GgiUX2XYsnR6YQAsuwz3NgeBopGhij
+
+#LOGGING
+logging:
+  level:
+    root: INFO
+    com.turkcell.identityservice: DEBUG
+    org.keycloak: WARN

@@ -1,14 +1,20 @@
+# Eureka
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
 
+# Explicit routes for better control
 spring:
   cloud:
     gateway:
       server:
         webflux:
-          routes:
+          forwarded:
+            enabled: true
+          x-forwarded:
+            enabled: true
+          routes:             # Gateway Routes
             - id: customer-service
               uri: lb://customer-service
               predicates:
@@ -18,11 +24,17 @@ spring:
               uri: lb://identity-service
               predicates:
                 - Path=/api/v1/identity/**
+              filters:
+                - name: RequestRateLimiter
+                  args:
+                    key-resolver: "#{@ipKeyResolver}"
+                    redis-rate-limiter.replenishRate: 10     #saniyede kovaya kaç token dolsun?
+                    redis-rate-limiter.burstCapacity: 20     #kovanın maks. token kapasitesi.
+                    redis-rate-limiter.requestedTokens: 1    #bir isteğin kovadan kaç token düşüreceği?
 
+# Logging
 logging:
   level:
-    org.spring.framework.cloud.gateway: TRACE
+    org.spring.framework.cloud.gateway: DEBUG
     org.springframework.http.server.reactive: DEBUG
     org.springframework.web.reactive: DEBUG
-    reactor.ipc.netty: DEBUG
-    reactor.netty: DEBUG

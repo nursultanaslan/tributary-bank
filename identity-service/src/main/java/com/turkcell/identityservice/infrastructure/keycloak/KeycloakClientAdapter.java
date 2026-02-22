@@ -41,7 +41,7 @@ public class KeycloakClientAdapter implements KeycloakPort {
 
     @Override
     public UUID createUser(String email, String username, String password) {
-        log.info("Creating user with username {} and email {}", username, email);
+        log.info("Creating user with username: {} and email: {}", username, email);
 
         //Realm'e bağlan (GET /admin/realms/{realm})
         RealmResource realmResource = keycloakAdminClient.realm(keycloakProperties.getRealm());
@@ -57,7 +57,7 @@ public class KeycloakClientAdapter implements KeycloakPort {
 
             if (response.getStatus() != 201) {
                 String errorBody = response.readEntity(String.class);
-                log.error("Failed to create user: status {}, body {}", response.getStatus(), errorBody);
+                log.error("Failed to create user: status= {}, body= {}", response.getStatus(), errorBody);
                 throw new KeycloakServiceException("Keycloak'ta kullanıcı oluşturulamadı: HTTP " + response.getStatus() + " - " + errorBody);
             }
 
@@ -66,7 +66,7 @@ public class KeycloakClientAdapter implements KeycloakPort {
             String locationHeader = response.getHeaderString("Location");
             String userId = locationHeader.substring(locationHeader.lastIndexOf("/") + 1);
 
-            log.info("User created successfully in Keycloak: userId {}, email {}", userId, email);
+            log.info("User created successfully in Keycloak: userId= {}, email= {}", userId, email);
             return UUID.fromString(userId);
         }
     }
@@ -76,6 +76,7 @@ public class KeycloakClientAdapter implements KeycloakPort {
         RealmResource realmResource = keycloakAdminClient.realm(keycloakProperties.getRealm());
         UsersResource usersResource = realmResource.users();
         UserRepresentation userRep = usersResource.get(userId).toRepresentation();
+
         if (userRep == null) {
             throw new UserNotFoundException("User not found" + userId);
         }
@@ -116,14 +117,15 @@ public class KeycloakClientAdapter implements KeycloakPort {
                             .get(role.toKeycloakRole())
                             .toRepresentation();
             //Kullanıcıya rolü ata.
+            log.info("Kullanıcıya rolü atanıyor: {}", userId);
             realmResource
                     .users()
                     .get(userId.toString())
                     .roles()
                     .realmLevel()
                     .add(List.of(roleRep));
-        }catch (KeycloakServiceException e) {
-            throw new KeycloakServiceException("Kullanıcıya " + role + " rolü atanamadı: " + userId);
+        }catch (Exception e) {
+            log.error("Kullanıcıya: {} , rolü: {} atanamadı.", userId, role);
         }
     }
 

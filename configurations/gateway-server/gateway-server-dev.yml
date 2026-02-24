@@ -27,6 +27,17 @@ spring:
               uri: lb://customer-service
               predicates:
                 - Path=/api/v1/customers/**
+              filters:
+                - name: RequestRateLimiter
+                  args:
+                    key-resolver: '#{@ipKeyResolver}'
+                    redis-rate-limiter.replenishRate: 20
+                    redis-rate-limiter.burstCapacity: 40
+                    redis-rate-limiter.requestedTokens: 5
+                - name: CircuitBreaker
+                  args:
+                    name: customerServiceCB
+                    fallbackUri: forward:/fallback/customer-service
 
             - id: identity-service
               uri: lb://identity-service
@@ -63,4 +74,6 @@ resilience4j:
         permittedNumberOfCallsInHalfOpenState: 10     #half-open durumdayken kaç test isteği atılsın?
     instances:
       identityServiceCB:
+        baseConfig: default
+      customerServiceCB:
         baseConfig: default

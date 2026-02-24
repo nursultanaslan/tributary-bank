@@ -13,7 +13,13 @@ public class FallbackController
     @GetMapping("/identity-service")
     public Mono<String> identityServiceFallback()
     {
-        return Mono.just("identity-service şu an kullanılamıyor, lütfen daha sonra tekrar deneyin.");
+        return Mono.just("identity-service geçici olarak kullanılamıyor, lütfen daha sonra tekrar deneyin.");
+    }
+
+    @GetMapping("/customer-service")
+    public Mono<String> customerServiceFallback()
+    {
+        return Mono.just("customer service geçici olarak kullanılamıyor");
     }
 
 }

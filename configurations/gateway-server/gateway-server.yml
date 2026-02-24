@@ -5,3 +5,8 @@ eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
+
+data:
+  redis:
+    host: localhost
+    port: 6379

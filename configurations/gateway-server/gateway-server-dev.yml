@@ -6,6 +6,12 @@ eureka:
   instance:
     prefer-ip-address: true
 
+# Redis
+data:
+  redis:
+    host: localhost
+    port: 6379
+
 # Explicit routes for better control
 spring:
   cloud:

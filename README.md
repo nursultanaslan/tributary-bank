@@ -4,13 +4,13 @@ Tributary Bank is a sample banking system built with Spring Boot and Spring Clou
 
 ## Components
 
-| Service               | Port | Description |
-|-----------------------|------|-------------|
-| **Eureka Server**     | 8761 | Service discovery registry for all services |
-| **Config Server**     | 8787 | Centralized configuration management (backed by Git or local files) |
-| **Gateway**           | 8888 | API Gateway with routing, load balancing and edge concerns |
-| **Identity Service**  | 8082 | Handles user authentication and authorization (issuing / validating tokens) |
-| **Customer Service**  | 8081 | Manages customer data and exposes customer-related operations |
+| Service              | Port | Description |
+|----------------------|------|-------------|
+| **Eureka Server**    | 8761 | Service discovery registry for all services |
+| **Config Server**    | 8787 | Centralized configuration management (backed by Git or local files) |
+| **Gateway Server**   | 8888 | API Gateway with routing, load balancing and edge concerns |
+| **Identity Service** | 8082 | Handles user authentication and authorization (issuing / validating tokens) |
+| **Customer Service** | 8081 | Manages customer data and exposes customer-related operations |
 
 ## Spring Cloud Features Demonstrated
 
@@ -31,7 +31,6 @@ Tributary Bank is a sample banking system built with Spring Boot and Spring Clou
 
 - **Java**: 21+
 - **Maven**: 3.8+
-- (Optional) **Docker**: if you plan to containerize or run backing services via Docker
 
 ## Getting Started
 
@@ -69,7 +68,7 @@ Run the command in the corresponding module directory (e.g. `config-server`, `eu
 
 After Config and Eureka are up:
 
-- Start **Gateway** (port `8888`)
+- Start **Gateway Server** (port `8888`)
 - Start **Identity Service** (port `8082`)
 - Start **Customer Service** (port `8081`)
 

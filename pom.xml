@@ -18,6 +18,7 @@
         <module>discovery-server</module>
         <module>gateway-server</module>
         <module>identity-service</module>
+        <module>account-service</module>
     </modules>
 
     <properties>

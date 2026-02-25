@@ -10,6 +10,7 @@
         <module name="config-server" />
         <module name="gateway-server" />
         <module name="discovery-server" />
+        <module name="account-service" />
         <module name="customer-service" />
         <module name="identity-service" />
       </profile>
@@ -20,6 +21,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="account-service" options="" />
       <module name="bff-service" options="" />
       <module name="config-server" options="" />
       <module name="customer-service" options="" />

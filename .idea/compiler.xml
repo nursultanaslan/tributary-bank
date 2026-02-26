@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
-      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
@@ -15,19 +14,5 @@
         <module name="identity-service" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="bff-service" target="21" />
-    </bytecodeTargetLevel>
-  </component>
-  <component name="JavacSettings">
-    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="account-service" options="" />
-      <module name="bff-service" options="" />
-      <module name="config-server" options="" />
-      <module name="customer-service" options="" />
-      <module name="discovery-server" options="" />
-      <module name="gateway-server" options="" />
-      <module name="identity-service" options="" />
-    </option>
   </component>
 </project>

@@ -1,5 +1,7 @@
 package com.turkcell.gatewayserver.controller;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -7,19 +9,22 @@ import reactor.core.publisher.Mono;
 
 @RestController
 @RequestMapping("/fallback")
-public class FallbackController
-{
+public class FallbackController {
 
     @GetMapping("/identity-service")
-    public Mono<String> identityServiceFallback()
-    {
-        return Mono.just("identity-service geçici olarak kullanılamıyor, lütfen daha sonra tekrar deneyin.");
+    public Mono<ResponseEntity<String>> identityServiceFallback() {
+        return Mono.just(ResponseEntity
+                .status(HttpStatus.SERVICE_UNAVAILABLE)
+                .body("Identity service is unavailable")
+        );
     }
 
     @GetMapping("/customer-service")
-    public Mono<String> customerServiceFallback()
-    {
-        return Mono.just("customer service geçici olarak kullanılamıyor");
+    public Mono<ResponseEntity<String>> customerServiceFallback() {
+        return Mono.just(ResponseEntity
+                .status(HttpStatus.SERVICE_UNAVAILABLE)
+                .body("Customer service is unavailable")
+        );
     }
 
 }

@@ -67,9 +67,10 @@ resilience4j:
   circuitbreaker:
     configs:
       default:
+        slidingWindowType: COUNT_BASED
         slidingWindowSize: 20                         #son kaç isteğe bakayım?
-        minimumNumberOfCalls: 10                      #en az 10 çağrı gelmeden CB open olmasın.
-        failureRateThreshold: 50                      #bunların % kaçı başarısızca CB open olsun?
+        minimumNumberOfCalls: 10                      #en az 10 çağrı gelmeden % karar mek. çalışmasın.
+        failureRateThreshold: 50                      #en az 10 çağrı geldi -> bunların % kaçı başarısızca CB open olsun?
         waitDurationInOpenState: 10s                  #CB open olduktan kaç sn sonra half_open'a geçsin?
         permittedNumberOfCallsInHalfOpenState: 10     #half-open durumdayken kaç test isteği atılsın?
     instances:
